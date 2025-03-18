@@ -3,55 +3,67 @@ package org.example;
 public class Main {
     public static void main(String[] args) {
 
+
     }
 
-    public static double sum(double[] nums) {
-        double sum = 0;
-        for (double num : nums) {
-            sum += num;
+    /**
+     * print numbers in range [1, num]
+     * @param num the upper bound (assume it is always positive)
+     */
+    public static void printNum(int num) {
+        // base case
+        if (num == 0) {
+            return;
         }
-        return sum;
-    }
 
-    public static double avg(double[] nums) {
-        if(nums.length == 0) return 0;
-        return sum(nums) / nums.length;
+        // general pattern
+        System.out.println(num);
+        printNum(num - 1);
     }
+    // this version outputs in descending order: e.g. 3, 2, 1
+    // recursion means first call -> last finish
 
-    public static double min(double[] nums) {
-        if (nums.length == 0) return -1;
-        double min = nums[0];
-        for (double num : nums) {
-            if(num < min) {
-                min = num;
-            }
+    /*
+    public static void printNum(int num) {
+        // base case
+        if (num == 0) {
+            return;
         }
-        return min;
-    }
 
-    public static double calcFinalScore(double[] scores) {
-        double min = scores[0];
-        double max = scores[0];
-        double sum = 0;
-        for (double score : scores) {
-            sum += score;
-            if (score < min) {
-                min = score;
-            } else if (score > max) {
-                max = score;
-            }
+        // general pattern
+        printNum(num - 1);
+        System.out.println(num);
+    }
+    // this version outputs in ascending order: e.g. 1, 2, 3
+     */
+
+    /**
+     * calculate the sum of values in range [1, num]
+     * @param num the upper bound (assume it is always positive)
+     */
+    public static int sum(int num) {
+        if (num == 1) {
+            return 1;
         }
-        sum -= max;
-        sum -= min;
-        double scoresLeft = scores.length - 2;
-        return sum / scoresLeft;
+
+        return sum(num - 1) + num;
     }
 
-    public static double[] minOfRow(double[][] numss) {
-
-    }
-
-    public static double[] minOfCol(double[][] numss) {
-
+    /**
+     * calculate the fibonacci number with the certain input
+     * @param num
+     * @return
+     * F(0) = 0
+     * F(1) = 1
+     * F(2)= 1
+     * F(3) = 2
+     * F(4) = 3
+     * 0 1 1 2 3 5 8 13 21 34 55
+     */
+    public static int fibonacci(int num) {
+        if (num <= 1) {
+            return num;
+        }
+        
     }
 }
