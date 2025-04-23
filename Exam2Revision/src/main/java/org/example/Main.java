@@ -10,7 +10,7 @@ import java.util.List;
 4. true
 5. false
 
-1. C
+1. B
 2. D
 3. A
 4. D, X -> A
