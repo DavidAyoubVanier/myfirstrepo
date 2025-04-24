@@ -6,7 +6,7 @@ import java.util.Objects;
 public class User implements Comparable<User> {
     private int id;
     private String name;
-    private String gender;
+    private Gender gender;
 
     public enum Gender {
         FEMALE, MALE
